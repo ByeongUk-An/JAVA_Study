@@ -1,0 +1,15 @@
+package Exex;
+
+public class St {
+
+	public static void main(String[] args) {
+		String aa = new String("¾È³ç");
+		String bb;
+		bb = aa;
+		
+		System.out.println(bb);
+		bb = new String("Hello");
+		System.out.println(bb);
+	}
+
+}
