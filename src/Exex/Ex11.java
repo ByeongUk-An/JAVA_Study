@@ -19,7 +19,7 @@ public class Ex11 {
 				break;
 			}
 			for(i =0; i< course.length; i++) {
-				if(course[i].equals(name)) { 
+				if(course[i].equals(name)) { 	`
 					System.out.println(name + "의 점수는 " + score[i]);
 					j = 1;
 				}
