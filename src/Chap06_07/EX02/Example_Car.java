@@ -26,6 +26,10 @@ public class Example_Car {
 		sonata.model = "소나타";
 		sonata.color = "파란색";
 		sonata.maxSpead = 190;
+		
+		//변수의 값을 직접 할당, 권장 사항은 아니다. 메모리에 원하지 않는 값을 직접 할당.
+		//private 변수명 : 캡슐화 , 직접변수에 값을 대입못하도록 설정
+		//setter 를 통해서 값을 부여 : 변수의 입력되는 값을 제어 할 수 있다.
 		System.out.print(sonata.company);
 		System.out.print(sonata.model);
 		System.out.print(sonata.color);

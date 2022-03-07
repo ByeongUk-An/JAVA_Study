@@ -9,9 +9,9 @@ public class Car {
 	public String getCompany() {
 		return company;
 	}
-	public void setCompany(String company) {
-		this.company = company;
-	}
+	public void setCompany(String company) {  // RAM(메모리)의 값을 부여할때 setter
+		this.company = company;  //this 는 객체 자신을 뜻한다.
+	}							 //메소드에 인풋되는 변수명, 인풋되는 변수를 받는 변수명
 	public String getModel() {
 		return model;
 	}
