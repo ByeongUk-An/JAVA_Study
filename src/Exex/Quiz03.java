@@ -1,6 +1,9 @@
 package Exex;
 
 class Student {
+	// Java는 다중 상속이 불가. 부모 class는 한개만 가능. Java의 모든 class는 Object의 자식 class임
+    // Object class에서 정의한 필드나 method를 재사용할 수 있음
+	
 	String name; // 학생이름
 	int studentID; // 학번
 	int kor; // 국어점수
@@ -15,7 +18,8 @@ class Student {
 
 
 	@Override
-	public String toString() {
+	public String toString() { 
+		//Object 클래스의 메소드, 객체 자체를 출력할때,[패키지명.클래스명@해쉬코드]
 		return "이름 : " + name + ", 학번 : " + studentID + ", 국어 : " + kor + ", 영어 : " + eng + ", 수학 : " + math + "합계 : "
 				+ sum + ", 평균 : " + avg;
 
@@ -23,18 +27,18 @@ class Student {
 }
 
 	class S_철수 extends Student {
-		S_철수() {
+		S_철수() {  //생성자: 1. 클래스명과 동일, 2. 리턴타입이 없어야한다.
 		};
 
 		S_철수(int k, int e, int m, String h, int id) {
-			super.kor = k;
+			super.kor = k;  //super 부모 클래스, this : 자신의 객체
 			super.eng = e;
 			super.math = m;
 			super.name = h;
 			super.studentID = id;
 
 			super.sum = k + e + m;
-			super.avg = (k + e + m) / 3;
+			super.avg = (double)((k + e + m) / 3); // 평균을 계산 할때는 (double)로 캐스팅
 		}
 
 		@Override
