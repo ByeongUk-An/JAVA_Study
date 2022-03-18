@@ -6,9 +6,15 @@ abstract class Animal {
 	
 	abstract void cry();
 	abstract void run();
+	
+	@Override
+	public String toString() {
+		return "이름 : " + name + " , 나이 :" + age;
+	}
 }
 
-class Cat extends Animal {
+class Cat extends Animal {	//Cat Animal 상속 일부만 상속 한경우 추상 클래스
+							//모두 추상 메소드를 구현한 경우는 콘크리트 클래스
 	
 	Cat(String name, int age) {
 		super.name = name;
@@ -16,7 +22,7 @@ class Cat extends Animal {
 	}
 	
 	@Override
-	void cry() {
+	void cry() {  //추상 메소드를 구현한 메소드
 		System.out.println("냐옹");
 		
 	}
