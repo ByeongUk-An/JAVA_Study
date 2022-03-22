@@ -24,6 +24,7 @@ class A {
 	
 	void abc() {
 		int b = 5;	//지역 변수 : 메소드 내부에 선언된 변수 (final이 생략)
+					//지역 이너클래스에서 사용된 경우 : final
 		//	b = 10; //자동으로 final 키가 컴파일러에 의해서 자동으로 할당.
 		int c = 10;
 			c= 20;
@@ -31,7 +32,7 @@ class A {
 			void bcd() {
 				System.out.println(a);	// 필드
 				System.out.println(b);	// 지역변수
-				a = 5;
+				a = 5;	// 필드는 값수정이 가능
 				//b = 7;	//지역클래스 내부에 선언된 지역변수는 자동으로 final키가 컴파일러에 의해서 할당됨
 			}
 		}
