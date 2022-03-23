@@ -13,4 +13,14 @@
     <fullyQualifiedTypeName name="Chap13.EX01.A.B"/>
     <fullyQualifiedTypeName name="Chap13.EX02.A.B"/>
     <fullyQualifiedTypeName name="Chap13.EX03.A.B"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="Chap14.EX01.ArrayIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.lang.Number"/>
+    <fullyQualifiedTypeName name="java.text.NumberFormat"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.lang.AutoCloseable"/>
 </qualifiedTypeNameHistroy>
