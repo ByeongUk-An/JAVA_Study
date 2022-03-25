@@ -1,4 +1,4 @@
-package Chap15;
+package Chap15.EX01;
 
 public class TheNeedForThread {
 
