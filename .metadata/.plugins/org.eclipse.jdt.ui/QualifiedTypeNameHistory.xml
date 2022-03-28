@@ -23,4 +23,10 @@
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.lang.AutoCloseable"/>
+    <fullyQualifiedTypeName name="Chap15.EX02.SMIFileThread"/>
+    <fullyQualifiedTypeName name="Chap15.EX03.SMIFileThread"/>
+    <fullyQualifiedTypeName name="Chap15.EX03.VideoFileThread"/>
+    <fullyQualifiedTypeName name="Chap15.EX04.SMIFileRunnable"/>
+    <fullyQualifiedTypeName name="Chap15.EX04.VideoFileRunnable"/>
+    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
 </qualifiedTypeNameHistroy>
