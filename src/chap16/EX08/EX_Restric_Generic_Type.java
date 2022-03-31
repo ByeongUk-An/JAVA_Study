@@ -68,10 +68,11 @@ class Pancil {
 }
 
 
-
-class GenericPrint<T extends Fluit> {
-	private T Fluit;
-
+//제네릭 클래스 : Fluit 타입만 올수 있음.
+class GenericPrint<T extends Fluit> {  //DTO(Data Transfer Object) - getter, setter 
+									   // Vo(Value Object) - getter
+	private T Fluit;                   // 데이터를 받아서 전송하는 중간자 역활을 함.
+                                       // 계층간에 값을 받아서 전송, 중간자 역활
 	public T getFluit() {
 		return Fluit;
 	}

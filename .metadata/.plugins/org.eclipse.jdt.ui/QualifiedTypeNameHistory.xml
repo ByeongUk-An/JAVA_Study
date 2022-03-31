@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="Chap06_07.Ex05.A"/>
     <fullyQualifiedTypeName name="Chap06_07.Ex05.C"/>
     <fullyQualifiedTypeName name="Chap10.EX03.b"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="Chap10.Ex05.BB"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="Chap12.Ex09.PhoneInterface"/>
@@ -29,4 +28,5 @@
     <fullyQualifiedTypeName name="Chap15.EX04.SMIFileRunnable"/>
     <fullyQualifiedTypeName name="Chap15.EX04.VideoFileRunnable"/>
     <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
