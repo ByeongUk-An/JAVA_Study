@@ -28,5 +28,9 @@
     <fullyQualifiedTypeName name="Chap15.EX04.SMIFileRunnable"/>
     <fullyQualifiedTypeName name="Chap15.EX04.VideoFileRunnable"/>
     <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+    <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
 </qualifiedTypeNameHistroy>
