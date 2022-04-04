@@ -12,6 +12,18 @@ import java.util.Scanner;
  */
 class Student {
 	int score;
+
+	Student(int score) {
+		this.score = score;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
 }
 
 public class ScoreStudent_1 {
@@ -33,7 +45,7 @@ public class ScoreStudent_1 {
 
 				+ "---------------------------------------------------");
 
-		while (run == true) {
+		while (run == true) { //
 
 			System.out.println("선택>");
 
@@ -44,15 +56,19 @@ public class ScoreStudent_1 {
 				studentNo = scanner.nextInt();
 			} else if (selectNo == 2) {
 				scores = new int[studentNo];
-				
-				for (int i = 0; i < studentNo; i++) {
-					System.out.println((i+1)+"번 학생 점수를 입력하세요 :" );
-					st.add(scanner.nextInt());
+
+				if (studentNo == 0) {
+					System.out.println("학생수를 먼저 입력 하세요.");
+				} else {
+					for (int i = 0; i < studentNo; i++) {
+						System.out.println((i + 1) + "번 학생 점수를 입력하세요 :");
+						st.add(scanner.nextInt());
+					}
 				}
 				System.out.println("점수 입력이 끝났습니다.");
 			} else if (selectNo == 3) {
 				for (int i = 0; i < studentNo; i++) {
-					System.out.println(i+"번 학생의 점수는 :" + st.get(i));
+					System.out.println(i + "번 학생의 점수는 :" + st.get(i));
 				}
 			} else if (selectNo == 4) {
 				int max = scores[0];
@@ -63,11 +79,11 @@ public class ScoreStudent_1 {
 					}
 				}
 				for (int i = 0; i < studentNo; i++) {
-					sum+=st.get(i);
+					sum += st.get(i);
 				}
 				int avg = sum / studentNo;
 				System.out.println("최고점수: " + max);
-				System.out.println("평균: " + (double)avg);
+				System.out.println("평균: " + (double) avg);
 			} else if (selectNo == 5) {
 				run = false;
 				System.out.println("프로그램 종료");

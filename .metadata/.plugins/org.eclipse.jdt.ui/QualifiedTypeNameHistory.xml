@@ -12,7 +12,6 @@
     <fullyQualifiedTypeName name="Chap13.EX01.A.B"/>
     <fullyQualifiedTypeName name="Chap13.EX02.A.B"/>
     <fullyQualifiedTypeName name="Chap13.EX03.A.B"/>
-    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="Chap14.EX01.ArrayIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
@@ -33,4 +32,9 @@
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="ch13.domain.userinfo.UserInfo"/>
+    <fullyQualifiedTypeName name="ch13.domain.userinfo.dao.oracle.UserInfoOracleDao"/>
+    <fullyQualifiedTypeName name="ch13.domain.userinfo.dao.mysql.UserInFoMySqlDao"/>
 </qualifiedTypeNameHistroy>
