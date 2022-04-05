@@ -28,7 +28,6 @@
     <fullyQualifiedTypeName name="Chap15.EX04.VideoFileRunnable"/>
     <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
     <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.Objects"/>
@@ -37,4 +36,6 @@
     <fullyQualifiedTypeName name="ch13.domain.userinfo.UserInfo"/>
     <fullyQualifiedTypeName name="ch13.domain.userinfo.dao.oracle.UserInfoOracleDao"/>
     <fullyQualifiedTypeName name="ch13.domain.userinfo.dao.mysql.UserInFoMySqlDao"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="Chap10.Ex07.Ex01.ObjectMethod_toString"/>
 </qualifiedTypeNameHistroy>
