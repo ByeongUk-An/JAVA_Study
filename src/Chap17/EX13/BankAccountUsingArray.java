@@ -59,11 +59,13 @@ public class BankAccountUsingArray {
 		System.out.println("목록조회");
 		System.out.println("------");
 		for(int i = 0; i<index; i++) {
-			
+			System.out.print(accountArray[i].getAno()+" ");
+            System.out.print(accountArray[i].getOwner()+" ");
+            System.out.println(accountArray[i].getBalance());
 		}
 	}
 
-	private static void deposit() {
+	private static void deposit(String accountNo,int amount) {
 		// 코드 작성 : 3. 예금 <== 계좌번호를 받아서 객체에서 해당 계좌를 찾아서, 입금금액을 받아서 해당계좌에 저장.
 	}
 
@@ -101,7 +103,12 @@ public class BankAccountUsingArray {
 			} else if (selectNo == 2) {
 				accountList();
 			} else if (selectNo == 3) {
-				deposit();
+				System.out.print("계좌번호 입력 >> ");
+                String accountNo = scanner.next();
+                System.out.print("입금액 입력 >> ");
+                int balance = scanner.nextInt();
+                deposit(accountNo, balance);
+				
 			} else if (selectNo == 4) {
 				withdraw();
 			} else if (selectNo == 5) {
