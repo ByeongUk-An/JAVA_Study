@@ -1,7 +1,27 @@
-package Chap17.EX13;
+package Chap17.EX15;
 
-//완료 시간 : 내일 아침 9: 30분까지 , p.jangwoo@gmail.com, 각 팀장님에게 메일 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Objects;
+
+//완료 시간 : 내일 아침 12: 20분까지 , p.jangwoo@gmail.com, 각 팀장님에게 메일 
+
+//배열로 구현된 내용을 ArrayList 로 변환해서 사용.
+
+//Set 
+
+//Set : 
+//
+//
+
+//
+
+//
+
+
+
 import java.util.Scanner;
+import java.util.Set;
 
 class Account{       //계좌 정보를 저장하는 객체. 중요한 필드, private (캡슐화),   
 					//DTO, VO <== 각계층으로 필드의 값을 저장하고 전달  
@@ -41,16 +61,29 @@ class Account{       //계좌 정보를 저장하는 객체. 중요한 필드, private (캡슐화),
 		this.balance = balance;
 	}
 	
-	
-		
+	@Override
+		public boolean equals(Object obj) {
+			if (obj instanceof Account) {
+				if (this.ano.equals(((Account)obj).ano) ) {
+					return true; 
+				}
+			}
+			return false;
+		}
+	@Override
+		public int hashCode() {
+			return Objects.hash(ano);
+		}
+			
 }
+// 완료 시간 : 13:00   
 
-public class BankAccountUsingArray {
-	//배열을 사용해서 Account 객체 등록 
-	private static Account[] accountArray = new Account[100];    //배열에 객체 저장.
-		// Account[] : 배열 타입.참조타입, 배열의 각방에 값이 존재하지 않을 경우 기본값으로 NULL 
-		// 배열 생성시 방(index) 의 크기를 선언, index =0 , length() <== 배열 바의 갯수
+public class BankAccountUsingHashSet {
 	
+	//ArrayList는 동일한 계좌를 넣을수 있다. 
+	//계좌 번호는 중복 저장이 되면 안된다.  ano 컬럼은 중복 저장되면 안되게 설정하고 Set에 저장 . 
+	
+	private static Set<Account> aSet = new HashSet<Account>();
 	private static Scanner scanner = new Scanner(System.in); 
 	
 	private static void createAccount() {
@@ -68,17 +101,10 @@ public class BankAccountUsingArray {
 		
 		//각 필드의 정보를 사용자로 부터 할당 받아서 객체를 생성후 객체에 필드의 값을 저장. 
 		Account newAccount = new Account(ano, owner, balance);    //생성자를 통해서 객체에 필드값적용후 객체 생성. 
-		
-		//배열 선은은 메소드 외부에서 선언. 전역변수 : 모든 메소드에서 사용가능 
-		//객체를 배열에 저장(비어있는 방에 저장). for 문을 사용해서 null인 방을 찾아서 null경우 객체를 저장.  
-		for (int i = 0 ; i < accountArray.length; i++) {  //accountArray 배열 방을 0 ~99 방까지 순회
-			if (accountArray[i] == null) {   // 0번방 부터 null 인 방을 찾아서 null일 경우 객체를 배열에 저장. 
-				accountArray[i] = newAccount;  //null 인 방에 객체를 저장. 
-				System.out.println("계좌가 성공적으로 생성되었습니다. ");
-				break; 		// 계좌를 생성하고 for문을 빠져나온다. 
-			}
-		}
-			
+			  
+		aSet.add(newAccount) ;   
+		System.out.println("계좌가 성공적으로 생성되었습니다. ");
+			 		
 	}
 	private static void accountList() {
 		//코드 작성 :2. 계좌 목록 출력 :  배열에 저장된 객체를 가져와서 계좌번호, 이름, 금액 을 출력 
@@ -88,9 +114,9 @@ public class BankAccountUsingArray {
 		System.out.println("------------");
 		
 		//배열의 각방의 null아닌 경우 , 객체의 필드의 값을 출력. 
-		for ( int i = 0 ; i <  accountArray.length; i++) {
-			//각 방의 객체를 담는 변수를 선언 
-			Account account = accountArray[i];    // 0 ~ 99 방의 객체를 account 참조 변수에 담는다. 
+		Iterator<Account> ir = aSet.iterator();
+		while(ir.hasNext()) {
+			Account account = ir.next();    // 0 ~ 99 방의 객체를 account 참조 변수에 담는다. 
 			if (account != null) {    //각 방의 값이 null이 아닐 경우만 객체정보를 가져와서 출력. 
 				System.out.print(account.getAno());  //계좌 정보. 
 				System.out.print("    ");
@@ -157,25 +183,23 @@ public class BankAccountUsingArray {
 	private static Account findAccount(String ano) {
 		Account account = null ; 
 		//코드 작성 
-		for (int i = 0 ; i < accountArray.length ; i++) {   
-			if (accountArray[i] != null) {		//배열방의 값이 null이 아닐 경우에 객체의 ano[계좌] 번호. 
-				//각 객체의 방의 ano 를 담는 변수 선언. 
-				String dbAno = accountArray[i].getAno(); //배열의 각 방에 저장된 객체의 ano를 dbAno 변수에 할당. 
-				if (dbAno.equals(ano)) {
-					account = accountArray[i]; 
-					break;
-				}
-			}
+		Iterator<Account> ir = aSet.iterator();
+		
+		while(ir.hasNext()) {
+			Account a1 = ir.next();
+			String dbAno = a1.getAno(); //배열의 각 방에 저장된 객체의 ano를 dbAno 변수에 할당. 
+			if (dbAno.equals(ano)) {	
+				account = a1; 
+				return account;
+				
+			}	
 		}
-			
-		return account; 
+			return account; 
 	}
+			
 	
-	
-	
-	
-
 	public static void main(String[] args) {
+		
 		boolean run = true; 
 		while (run) {
 			System.out.println("-----------------------------------------------");

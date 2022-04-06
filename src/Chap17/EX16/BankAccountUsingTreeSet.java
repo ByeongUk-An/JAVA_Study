@@ -1,57 +1,36 @@
-package Chap17.EX13;
+package Chap17.EX16;
 
-//완료 시간 : 내일 아침 9: 30분까지 , p.jangwoo@gmail.com, 각 팀장님에게 메일 
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.TreeSet;
 
-class Account{       //계좌 정보를 저장하는 객체. 중요한 필드, private (캡슐화),   
-					//DTO, VO <== 각계층으로 필드의 값을 저장하고 전달  
-					// 객체명 필드접근(x), 생성자(0), getter(0), setter(0)
-	private String ano ; 	//계좌 번호
-	private String owner;   //계좌 주 , 이름
-	private int balance; 	// 통장 금액, 
+//완료시간 : 5:00 , p.jangwoo@gmail.com, 팀장님 메일주소로도 전송해 주세요. 
+
+// Account 객체를 TreeSet에 저장. ano[계좌 번호], owner[이름], balance[예금금액] 
+// TreeSet 에 일반객체를 넣을때 어떤 컬럼을 정렬할지를 지정. Comparable<E>,CompareTo(),  Comparator<E> compare() 
+// Account 객체를 수정하지 않고. balance 값이 큰것부터 출력되도록 구성. <내림차순> 
+
+public class BankAccountUsingTreeSet {
 	
-	Account(String ano, String owner, int balance){   //객체 생성시 필드의 값을 받아서 필드에 로드 
-		this.ano = ano ; 
-		this.owner = owner; 
-		this.balance = balance; 	
-	}
-	//getter, setter 
+	private static TreeSet<Account> tSet = new TreeSet<Account>(new Comparator<Account>() {
 
-	public String getAno() {
-		return ano;
-	}
-
-	public void setAno(String ano) {
-		this.ano = ano;
-	}
-
-	public String getOwner() {
-		return owner;
-	}
-
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
-
-	public int getBalance() {
-		return balance;
-	}
-
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
+		@Override
+		public int compare(Account o1, Account o2) {
+			if(o1.getBalance()<o2.getBalance()) {  //내림차순 정렬처리
+				return 1;
+			}else if(o1.getBalance()==o2.getBalance()) {
+				return 0;
+			}else {
+				return -1;
+			}
+			
+		}
 	
-	
-		
-}
-
-public class BankAccountUsingArray {
-	//배열을 사용해서 Account 객체 등록 
-	private static Account[] accountArray = new Account[100];    //배열에 객체 저장.
-		// Account[] : 배열 타입.참조타입, 배열의 각방에 값이 존재하지 않을 경우 기본값으로 NULL 
-		// 배열 생성시 방(index) 의 크기를 선언, index =0 , length() <== 배열 바의 갯수
-	
+	});
 	private static Scanner scanner = new Scanner(System.in); 
+	
+	
 	
 	private static void createAccount() {
 		//코드 작성 : 1. 계좌 생성.  스캐너로 1.계좌번호, 2. 이름, 3. 초기통장 금액
@@ -68,17 +47,10 @@ public class BankAccountUsingArray {
 		
 		//각 필드의 정보를 사용자로 부터 할당 받아서 객체를 생성후 객체에 필드의 값을 저장. 
 		Account newAccount = new Account(ano, owner, balance);    //생성자를 통해서 객체에 필드값적용후 객체 생성. 
-		
-		//배열 선은은 메소드 외부에서 선언. 전역변수 : 모든 메소드에서 사용가능 
-		//객체를 배열에 저장(비어있는 방에 저장). for 문을 사용해서 null인 방을 찾아서 null경우 객체를 저장.  
-		for (int i = 0 ; i < accountArray.length; i++) {  //accountArray 배열 방을 0 ~99 방까지 순회
-			if (accountArray[i] == null) {   // 0번방 부터 null 인 방을 찾아서 null일 경우 객체를 배열에 저장. 
-				accountArray[i] = newAccount;  //null 인 방에 객체를 저장. 
-				System.out.println("계좌가 성공적으로 생성되었습니다. ");
-				break; 		// 계좌를 생성하고 for문을 빠져나온다. 
-			}
-		}
-			
+			  
+		tSet.add(newAccount) ;   
+		System.out.println("계좌가 성공적으로 생성되었습니다. ");
+			 		
 	}
 	private static void accountList() {
 		//코드 작성 :2. 계좌 목록 출력 :  배열에 저장된 객체를 가져와서 계좌번호, 이름, 금액 을 출력 
@@ -88,9 +60,9 @@ public class BankAccountUsingArray {
 		System.out.println("------------");
 		
 		//배열의 각방의 null아닌 경우 , 객체의 필드의 값을 출력. 
-		for ( int i = 0 ; i <  accountArray.length; i++) {
-			//각 방의 객체를 담는 변수를 선언 
-			Account account = accountArray[i];    // 0 ~ 99 방의 객체를 account 참조 변수에 담는다. 
+		Iterator<Account> ir = tSet.iterator();
+		while(ir.hasNext()) {
+			Account account = ir.next();    // 0 ~ 99 방의 객체를 account 참조 변수에 담는다. 
 			if (account != null) {    //각 방의 값이 null이 아닐 경우만 객체정보를 가져와서 출력. 
 				System.out.print(account.getAno());  //계좌 정보. 
 				System.out.print("    ");
@@ -157,18 +129,18 @@ public class BankAccountUsingArray {
 	private static Account findAccount(String ano) {
 		Account account = null ; 
 		//코드 작성 
-		for (int i = 0 ; i < accountArray.length ; i++) {   
-			if (accountArray[i] != null) {		//배열방의 값이 null이 아닐 경우에 객체의 ano[계좌] 번호. 
-				//각 객체의 방의 ano 를 담는 변수 선언. 
-				String dbAno = accountArray[i].getAno(); //배열의 각 방에 저장된 객체의 ano를 dbAno 변수에 할당. 
-				if (dbAno.equals(ano)) {
-					account = accountArray[i]; 
-					break;
-				}
-			}
+		Iterator<Account> ir = tSet.iterator();
+		
+		while(ir.hasNext()) {
+			Account a1 = ir.next();
+			String dbAno = a1.getAno(); //배열의 각 방에 저장된 객체의 ano를 dbAno 변수에 할당. 
+			if (dbAno.equals(ano)) {	
+				account = a1; 
+				return account;
+				
+			}	
 		}
-			
-		return account; 
+			return account; 
 	}
 	
 	
@@ -176,6 +148,9 @@ public class BankAccountUsingArray {
 	
 
 	public static void main(String[] args) {
+		
+		
+
 		boolean run = true; 
 		while (run) {
 			System.out.println("-----------------------------------------------");
@@ -201,6 +176,10 @@ public class BankAccountUsingArray {
 		scanner.close(); 
 		System.out.println("프로그램 종료");
 		
+		
+		
 	}
+
+	
 
 }
