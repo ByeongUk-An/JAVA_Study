@@ -19,16 +19,19 @@ class DataBox{
 		System.out.println("출력 데이터" + data);   // data : 메모리의 data , this 생략되어 있음. 
 	}
 }
+
+
 public class Waiting_WateNotify_1 {
 
 	public static void main(String[] args) {
+		
 		DataBox dataBox = new DataBox();
 		
 		//첫번째 쓰레드 : 공유 객체에 값을 넣는 쓰레드 
 		Thread t1 = new Thread() {          //익명 내부 클래스 
 			@Override
 			public void run() {
-				for (int i = 1 ; i <9 ; i++) {
+				for (int i = 1 ; i < 9 ; i++) {
 					dataBox.inputData(i);
 				}
 			}

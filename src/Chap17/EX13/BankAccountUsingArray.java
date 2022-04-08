@@ -1,7 +1,11 @@
 package Chap17.EX13;
 
-//완료 시간 : 내일 아침 9: 30분까지 , p.jangwoo@gmail.com, 각 팀장님에게 메일 
+import java.util.ArrayList;
+//완료 시간 : 내일 아침 12: 20분까지 , p.jangwoo@gmail.com, 각 팀장님에게 메일 
+
+// 배열로 구현된 내용을 ArrayList 로 변환해서 사용.
 import java.util.Scanner;
+
 
 class Account{       //계좌 정보를 저장하는 객체. 중요한 필드, private (캡슐화),   
 					//DTO, VO <== 각계층으로 필드의 값을 저장하고 전달  
@@ -39,17 +43,18 @@ class Account{       //계좌 정보를 저장하는 객체. 중요한 필드, private (캡슐화),
 
 	public void setBalance(int balance) {
 		this.balance = balance;
-	}
-	
-	
+	}	
 		
 }
 
 public class BankAccountUsingArray {
-	//배열을 사용해서 Account 객체 등록 
-	private static Account[] accountArray = new Account[100];    //배열에 객체 저장.
-		// Account[] : 배열 타입.참조타입, 배열의 각방에 값이 존재하지 않을 경우 기본값으로 NULL 
-		// 배열 생성시 방(index) 의 크기를 선언, index =0 , length() <== 배열 바의 갯수
+	//컬렉션(ArrayList<E>) 을 사용해서 Account 객체 등록 
+	// 배열은 방의 크기가 고정, 선언시 방의 크기를 지정, 방의 크기를 수정 할 수 없다. 
+	// 컬렉션은 방의 크기가 동적, 무한정 저장. 
+	private static Account[] accountArray = new Account[100];
+		 
+		// 컬렉션의 방의 값을 넣을 경우 add() : 제일 마지막 방에 값을 추가할 경우 ,  size() <== 컬랙션의 갯수
+		// 각방의 값을 삭제할때 remove() : 삭제시 
 	
 	private static Scanner scanner = new Scanner(System.in); 
 	

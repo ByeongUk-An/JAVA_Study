@@ -1,7 +1,11 @@
 package Chap17.EX14;
 
 import java.util.ArrayList;
+
 //완료 시간 : 내일 아침 12: 20분까지 , p.jangwoo@gmail.com, 각 팀장님에게 메일 
+
+//배열로 구현된 내용을 ArrayList 로 변환해서 사용.
+
 import java.util.Scanner;
 
 class Account{       //계좌 정보를 저장하는 객체. 중요한 필드, private (캡슐화),   
@@ -47,15 +51,13 @@ class Account{       //계좌 정보를 저장하는 객체. 중요한 필드, private (캡슐화),
 }
 
 public class BankAccountUsingArrayList {
-	//컬렉션(ArrayList<E>)을 사용해서 Account 객체 등록
-	// 배열은 방의 크기가 고정
-	// 컬렉션은 방의 크기가 동적, 무한정 저장, 방의 크기를 수정 할 수 없다. 
-	
+	//컬렉션(ArrayList<E>) 을 사용해서 Account 객체 등록 
+	// 배열은 방의 크기가 고정, 선언시 방의 크기를 지정, 방의 크기를 수정 할 수 없다. 
+	// 컬렉션은 방의 크기가 동적, 무한정 저장. 
 	private static ArrayList<Account> aList = new ArrayList<Account>();
-	
-		// Account[] : 배열 타입.참조타입, 배열의 각방에 값이 존재하지 않을 경우 기본값으로 NULL 
-		// 컬랙션의 방의 값을 추가 할떄 add()사용, size() <== 컬랙션의 갯수
-		// 각방의 값을 삭제할때 remove() : 삭제시
+	// 컬렉션의 방의 값을 넣을 경우 add() : 제일 마지막 방에 값을 추가할 경우 ,  size() <== 컬랙션의 갯수
+			// 각방의 값을 삭제할때 remove() : 삭제시 
+			//  get() 
 	
 	private static Scanner scanner = new Scanner(System.in); 
 	
@@ -74,23 +76,10 @@ public class BankAccountUsingArrayList {
 		
 		//각 필드의 정보를 사용자로 부터 할당 받아서 객체를 생성후 객체에 필드의 값을 저장. 
 		Account newAccount = new Account(ano, owner, balance);    //생성자를 통해서 객체에 필드값적용후 객체 생성. 
-		aList.add(newAccount);
-		//배열 선은은 메소드 외부에서 선언. 전역변수 : 모든 메소드에서 사용가능 
-		//객체를 배열에 저장(비어있는 방에 저장). for 문을 사용해서 null인 방을 찾아서 null경우 객체를 저장.  
-//		for (int i = 0 ; i < aList.size(); i++) {  //accountArray 배열 방을 0 ~99 방까지 순회
-//			if (aList[i] == null) {   // 0번방 부터 null 인 방을 찾아서 null일 경우 객체를 배열에 저장. 
-//				aList[i] = newAccount;  //null 인 방에 객체를 저장. 
-//				System.out.println("계좌가 성공적으로 생성되었습니다. ");
-//				break; 		// 계좌를 생성하고 for문을 빠져나온다. 
-//			}
-//		}
-		System.out.println(aList.size());
-		for (int i = 0; i< aList.size(); i++) {
-			Account account = aList.get(i);
-			System.out.println("계좌가 성공적으로 생성되었습니다. ");
-			break;
-		}
-			
+		
+		aList.add(newAccount) ;  
+		System.out.println("계좌가 성공적으로 생성되었습니다. ");
+					
 	}
 	private static void accountList() {
 		//코드 작성 :2. 계좌 목록 출력 :  배열에 저장된 객체를 가져와서 계좌번호, 이름, 금액 을 출력 
@@ -99,20 +88,18 @@ public class BankAccountUsingArrayList {
 		System.out.println("2. 계좌목록출력");
 		System.out.println("------------");
 		
-		//배열의 각방의 null아닌 경우 , 객체의 필드의 값을 출력.
-		
+		//배열의 각방의 null아닌 경우 , 객체의 필드의 값을 출력. 
 		for ( int i = 0 ; i <  aList.size(); i++) {
-			
 			//각 방의 객체를 담는 변수를 선언 
 			Account account = aList.get(i);    // 0 ~ 99 방의 객체를 account 참조 변수에 담는다. 
-			if (account != null) {    //각 방의 값이 null이 아닐 경우만 객체정보를 가져와서 출력. 
+			    
 				System.out.print(account.getAno());  //계좌 정보. 
 				System.out.print("    ");
 				System.out.print(account.getOwner());   //이름
 				System.out.print("    ");
 				System.out.print(account.getBalance());  //금액
 				System.out.println();   //라인 개행. 
-			}
+			
 		}	
 	}
 	private static void deposit() {
@@ -171,21 +158,12 @@ public class BankAccountUsingArrayList {
 	private static Account findAccount(String ano) {
 		Account account = null ; 
 		//코드 작성 
-//		for (int i = 0 ; i < accountArray.length ; i++) {   
-//			if (accountArray[i] != null) {		//배열방의 값이 null이 아닐 경우에 객체의 ano[계좌] 번호. 
-//				//각 객체의 방의 ano 를 담는 변수 선언. 
-//				String dbAno = accountArray[i].getAno(); //배열의 각 방에 저장된 객체의 ano를 dbAno 변수에 할당. 
-//				if (dbAno.equals(ano)) {
-//					account = accountArray[i]; 
-//					break;
-//				}
-//			}
-//		}
-		for(int i = 0; i< aList.size();i++) {
-			if(aList.get(i) != null) {
-				String dbAno = aList.get(i).getAno();
-				if(dbAno.equals(ano)) {
-					account = aList.get(i);
+		for (int i = 0 ; i < aList.size() ; i++) {   
+			if (aList.get(i) != null) {		//배열방의 값이 null이 아닐 경우에 객체의 ano[계좌] 번호. 
+				//각 객체의 방의 ano 를 담는 변수 선언. 
+				String dbAno = aList.get(i).getAno(); //배열의 각 방에 저장된 객체의 ano를 dbAno 변수에 할당. 
+				if (dbAno.equals(ano)) {
+					account = aList.get(i);   //accout 참조변수는 객체의 주소정보를 담는다.  
 					break;
 				}
 			}

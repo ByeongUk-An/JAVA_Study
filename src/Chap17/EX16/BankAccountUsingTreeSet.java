@@ -8,29 +8,25 @@ import java.util.TreeSet;
 //완료시간 : 5:00 , p.jangwoo@gmail.com, 팀장님 메일주소로도 전송해 주세요. 
 
 // Account 객체를 TreeSet에 저장. ano[계좌 번호], owner[이름], balance[예금금액] 
-// TreeSet 에 일반객체를 넣을때 어떤 컬럼을 정렬할지를 지정. Comparable<E>,CompareTo(),  Comparator<E> compare() 
+// TreeSet 에 일반객체를 넣을때 어떤 컬럼을 정렬할지를 지정. Comparable<E> compartTo(),  Comparator<E> compare()
 // Account 객체를 수정하지 않고. balance 값이 큰것부터 출력되도록 구성. <내림차순> 
 
 public class BankAccountUsingTreeSet {
 	
 	private static TreeSet<Account> tSet = new TreeSet<Account>(new Comparator<Account>() {
-
-		@Override
 		public int compare(Account o1, Account o2) {
-			if(o1.getBalance()<o2.getBalance()) {  //내림차순 정렬처리
-				return 1;
-			}else if(o1.getBalance()==o2.getBalance()) {
-				return 0;
+			if (o1.getBalance() < o2.getBalance()) {    //내림차순 정렬처리 
+				return 1; 
+			}else if (o1.getBalance() == o2.getBalance()) {
+				return 0; 
 			}else {
-				return -1;
+				return -1; 
 			}
-			
-		}
-	
+		};
 	});
+	
+	
 	private static Scanner scanner = new Scanner(System.in); 
-	
-	
 	
 	private static void createAccount() {
 		//코드 작성 : 1. 계좌 생성.  스캐너로 1.계좌번호, 2. 이름, 3. 초기통장 금액
@@ -145,7 +141,6 @@ public class BankAccountUsingTreeSet {
 	
 	
 	
-	
 
 	public static void main(String[] args) {
 		
@@ -177,9 +172,7 @@ public class BankAccountUsingTreeSet {
 		System.out.println("프로그램 종료");
 		
 		
-		
-	}
 
-	
+	}
 
 }
