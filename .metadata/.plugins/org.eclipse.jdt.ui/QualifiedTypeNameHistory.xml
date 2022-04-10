@@ -19,7 +19,6 @@
     <fullyQualifiedTypeName name="java.text.NumberFormat"/>
     <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-    <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.lang.AutoCloseable"/>
     <fullyQualifiedTypeName name="Chap15.EX02.SMIFileThread"/>
     <fullyQualifiedTypeName name="Chap15.EX03.SMIFileThread"/>
@@ -30,7 +29,6 @@
     <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Objects"/>
-    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="java.util.Properties"/>
     <fullyQualifiedTypeName name="ch13.domain.userinfo.UserInfo"/>
     <fullyQualifiedTypeName name="ch13.domain.userinfo.dao.oracle.UserInfoOracleDao"/>
@@ -39,4 +37,12 @@
     <fullyQualifiedTypeName name="Chap10.Ex07.Ex01.ObjectMethod_toString"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.nio.charset.Charset"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="java.awt.Image"/>
+    <fullyQualifiedTypeName name="java.awt.Graphics"/>
+    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
 </qualifiedTypeNameHistroy>
