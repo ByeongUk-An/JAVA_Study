@@ -16,7 +16,9 @@ import java.io.UnsupportedEncodingException;
     // 한글 : 3bype
 
 //UTF-16 : <고정길이> 
-    // 영문, 한글 모두 2byte로 처리. 
+    // 영문, 한글 모두 2byte로 처리.
+	//BOM 2byte : 모든 나라의 식별코드
+	//모든 나라의 언어를 처리
 
 
 //문자를 해당 인코딩 타입으로 바이트 스트림으로 생성한 경우 , 해당 인코딩 타입으로 조합을 해야 깨어지지 않는다. 
