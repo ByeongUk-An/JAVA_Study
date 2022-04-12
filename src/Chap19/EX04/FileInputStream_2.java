@@ -13,7 +13,7 @@ public class FileInputStream_2 {
 		// 1. 입력 파일 생성
 		File inFile = new File("Chap19\\EX04\\FileInputStream1.txt");
 
-		// 2. 1. byte 단위 일기
+		// 2. 1. byte 단위 일기 (한 바이트씩 읽어서 처리) : 처리 속도가 느리다.
 		InputStream is1 = null; // 객체 선언, Finally 블락에서 close하기 위해서 위에 선언
 		try {
 			is1 = new FileInputStream(inFile); // 객체 생성
