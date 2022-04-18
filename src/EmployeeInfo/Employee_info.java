@@ -194,7 +194,7 @@ public class Employee_info {
 			System.out.println("수정할 연락처를 입력해주세요.");
 			phone = sc.next();
 			employee.setPhone(phone);
-			System.out.println("연락처가 변경되었습니다.");
+			System.out.println("연락처가 변경되었습니다.!");
 		}else if(select == 2) {
 			System.out.println("수정할 나이를 입력해주세요");
 			age = sc.nextInt();
